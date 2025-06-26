@@ -1,0 +1,57 @@
+/* Write your CSS here */
+
+.teamCard {
+  height: 120px;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  color: white;
+  background-color: #ffffff33;
+}
+
+.listContainer {
+  list-style-type: none;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.teamImageUrl {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.linkContainer {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .teamCard {
+    height: 200px;
+    width: 400px;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    background-color: #ffffff33;
+  }
+
+  .teamImageUrl {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+  .teamName {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+  }
+}

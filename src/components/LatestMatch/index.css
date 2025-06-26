@@ -1,0 +1,48 @@
+/* Write your CSS here */
+.latestMatchContainer {
+  background-color: #1e293b;
+  padding: 20px;
+
+  border-radius: 10px;
+  color: white;
+}
+.competingTeamLogos {
+  width: 100px;
+  height: 100px;
+}
+.latestMatchDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.firstSection {
+  display: flex;
+  justify-content: space-between;
+}
+.label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .latestMatchDetails {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  .competingTeamLogos {
+    width: 250px;
+    height: 250px;
+  }
+  .firstSection {
+    display: flex;
+  }
+  .horizontalLine {
+    display: none;
+  }
+}
