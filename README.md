@@ -1,6 +1,6 @@
 In this project, let's build an **IPL Dashboard App** by applying the concepts we have learned till now.
 
-## Published URl:  [www.https://ipl-dashboard-app-omega.vercel.app](https://ipl-dashboard-app-omega.vercel.app/)
+## Published URl:  https://ipl-dashboard-app-omega.vercel.app/
 
 ### Refer to the image below:
 
