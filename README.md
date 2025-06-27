@@ -1,5 +1,7 @@
 In this project, let's build an **IPL Dashboard App** by applying the concepts we have learned till now.
 
+## Published URl:  ipl-dashboard-app-omega.vercel.app
+
 ### Refer to the image below:
 
 <br/>
