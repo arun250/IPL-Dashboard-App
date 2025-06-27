@@ -2,11 +2,15 @@
 // Write your code here
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
+
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 import './index.css'
+
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
+
+import PieChar from '../PieChart'
 
 class TeamMatches extends Component {
   state = {
@@ -15,8 +19,14 @@ class TeamMatches extends Component {
     bannerUrl: '',
     isLoading: true,
   }
+
   componentDidMount() {
     this.getMatchItemData()
+  }
+
+  onClickBackButton = () => {
+    const {history} = this.props
+    history.replace('/')
   }
 
   getMatchItemData = async () => {
@@ -42,6 +52,7 @@ class TeamMatches extends Component {
       venue: latest.venue,
       result: latest.result,
       secondInnings: latest.second_innings,
+      matchStatus: latest.match_status,
     }
     const updatedRecentMatches = recentMatches.map(eachItem => ({
       id: eachItem.id,
@@ -58,6 +69,22 @@ class TeamMatches extends Component {
     })
   }
 
+  generatePieChart = value => {
+    const {latestMatchDetails, recentMatches} = this.state
+
+    const currenMatch = value === latestMatchDetails.matchStatus ? 1 : 0
+    const result =
+      recentMatches.filter(match => match.matchStatus === value).length +
+      currenMatch
+    return result
+  }
+
+  generatePieChartData = () => [
+    {name: 'Won', value: this.generatePieChart('Won')},
+    {name: 'Lost', value: this.generatePieChart('Lost')},
+    {name: 'Drawn', value: this.generatePieChart('Drawn')},
+  ]
+
   render() {
     const {latestMatchDetails, recentMatches, bannerUrl, isLoading} = this.state
     console.log(recentMatches)
@@ -67,7 +94,7 @@ class TeamMatches extends Component {
     return (
       <div className={`team-container ${id}`}>
         {isLoading ? (
-          <div testid="loader">
+          <div data-testid="loader">
             <Loader type="Oval" color="#ffffff" height={50} width={50} />
           </div>
         ) : (
@@ -80,6 +107,14 @@ class TeamMatches extends Component {
                 <MatchCard key={eachItem.id} recentMatches={eachItem} />
               ))}
             </ul>
+            <PieChar data={this.generatePieChartData()} />
+            <button
+              type="button"
+              className="backButton"
+              onClick={this.onClickBackButton}
+            >
+              Back
+            </button>
           </div>
         )}
       </div>

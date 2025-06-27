@@ -38,7 +38,7 @@ class Home extends Component {
         </div>
         <div className="unorderedListContainer">
           {isLoading ? (
-            <div testid="loader">
+            <div data-testid="loader">
               <Loader type="Oval" color="#ffffff" height={50} width={50} />
             </div>
           ) : (

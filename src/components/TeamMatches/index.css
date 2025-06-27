@@ -67,3 +67,10 @@
     margin-top: 50px;
   }
 }
+
+.backButton {
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+}

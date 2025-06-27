@@ -5,7 +5,7 @@ const MatchCard = props => {
   const {recentMatches} = props
   const {competingTeam, result, matchStatus, competingTeamLogo} = recentMatches
 
-  matchStatus === 'Won' ? 'greenColor' : 'redColor'
+  const matchstatus = matchStatus === 'Won' ? 'greenColor' : 'redColor'
   return (
     <li className={`listContainer ${matchStatus}`}>
       <div className="matchCardContainer">
@@ -16,7 +16,7 @@ const MatchCard = props => {
         />
         <p className="teamName">{competingTeam}</p>
         <p className="result">{result}</p>
-        <p className={`descAboutTeam ${matchStatus}`}>{matchStatus}</p>
+        <p className={`descAboutTeam ${matchStatus}`}>{matchstatus}</p>
       </div>
     </li>
   )
